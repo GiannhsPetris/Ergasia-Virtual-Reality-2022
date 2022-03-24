@@ -6,9 +6,13 @@ using UnityEngine.AI;
 public class drunkAi : MonoBehaviour
 { 
     private NavMeshAgent navMeshAgent;
+    Animator animator;
     [SerializeField] private Transform movePoint;
-    private void Awake(){
+    private void Start(){
        navMeshAgent = GetComponent<NavMeshAgent>();
+       animator = GetComponent<Animator>();
+       animator.SetBool("drunk walk", true);
+        navMeshAgent.destination = movePoint.position;
     }
 
 
@@ -16,6 +20,10 @@ public class drunkAi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        navMeshAgent.destination = movePoint.position;
+        //navMeshAgent.pathStatus == NavMeshPathStatus.PathComplete 
+        if (navMeshAgent.remainingDistance <= 0.5f){
+            animator.SetBool("trip", true);
+           // navMeshAgent.enabled = false;
+        }
     }
 }

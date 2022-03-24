@@ -7,7 +7,7 @@ public class npc_animations : MonoBehaviour
 {
 
     public string state;
-    public int test;
+ 
     Animator animator;
 
     void Awake(){
@@ -23,23 +23,18 @@ public class npc_animations : MonoBehaviour
         {
         case "bartending":
             animator.SetBool("bartending", true);
-            test = 1;
             break;
         case "drinking":
             animator.SetBool("drinking", true);
-            test = 2;
             break;
         case "sitting":
             animator.SetBool("sitting", true);
-            test = 3;
             break;
         case "sitting2":
             animator.SetBool("sitting2", true);
-            test = 4;
             break;
         case "drunk":
             animator.SetBool("drunk", true);
-            test = 5;
             break;
         }
     }
