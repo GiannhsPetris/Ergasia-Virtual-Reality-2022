@@ -39,9 +39,16 @@ public class npc_animations : MonoBehaviour
         }
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
         
     }
+
+     public void SetBoolTrue(string name) => animator.SetBool(name, true);
+ 
+    public void SetBoolFalse(string name) => animator.SetBool(name, false);
+ 
 }
