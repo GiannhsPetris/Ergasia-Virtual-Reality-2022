@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class NewBehaviourScript : MonoBehaviour
 {
     Animator animator;
@@ -10,6 +12,8 @@ public class NewBehaviourScript : MonoBehaviour
     public UnityEvent onEndAnim;
     public int aleCounter;
     public TextMeshProUGUI aleCounterUI;
+    public GameObject character;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +41,7 @@ public class NewBehaviourScript : MonoBehaviour
         GetComponent<StarterAssets.ThirdPersonController>().MoveSpeed = 2f;
         GetComponent<StarterAssets.ThirdPersonController>().SprintSpeed = 5.335f;
         aleCounter = 0;
-        aleCounterUI.text = "ALes Drunk: " + aleCounter.ToString();
+        aleCounterUI.text = "Ales Drunk: " + aleCounter.ToString();
     }
 
     public void startEvent(){
@@ -46,7 +50,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void aleDrunk(){
         aleCounter+=1;
-        aleCounterUI.text = "ALes Drunk: " + aleCounter.ToString();
+        aleCounterUI.text = "Ales Drunk: " + aleCounter.ToString();
         if (aleCounter >= 2){
             GetDrunk();
         }

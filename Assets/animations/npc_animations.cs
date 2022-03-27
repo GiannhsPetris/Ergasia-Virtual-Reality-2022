@@ -8,7 +8,7 @@ public class npc_animations : MonoBehaviour
 
     public string state;
  
-    Animator animator;
+    public Animator animator;
 
     void Awake(){
        
@@ -17,7 +17,7 @@ public class npc_animations : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         animator = GetComponent<Animator>();
+         //animator = TryGetComponent<Animator>();
 
         switch (state) 
         {
@@ -35,6 +35,24 @@ public class npc_animations : MonoBehaviour
             break;
         case "drunk":
             animator.SetBool("drunk", true);
+            break;
+        case "warrior":
+            animator.SetBool("warrior", true);
+            break;
+        case "sad":
+            animator.SetBool("sad", true);
+            break;
+        case "praying":
+            animator.SetBool("praying", true);
+            break;
+        case "floor":
+            animator.SetBool("floor", true);
+            break;
+        case "walkingM":
+            animator.SetBool("walkingM", true);
+            break;
+        case "walkingF":
+            animator.SetBool("walkingF", true);
             break;
         }
     }

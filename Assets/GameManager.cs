@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public int outScene, inScene, tavernScene, currentScene;
+    public int outScene, inScene, tavernScene, prevScene1;
     public static GameManager manager;
+    
 
     public enum Scene {
         tavern, 
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour
             manager = this;
             DontDestroyOnLoad(this);
         }else if (manager != this){
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
 
         
@@ -30,10 +31,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        outScene = -1;
-        inScene = 1;
-        tavernScene = 0;
-        currentScene = 1;
+        outScene = 1;
+        inScene = 2;
+        tavernScene = 3;
+       // prevScene = 1;
     }
 
     // Update is called once per frame
@@ -43,29 +44,39 @@ public class GameManager : MonoBehaviour
     }
 
     public void goOut(){
-        if (-1 != SceneManager.GetActiveScene().buildIndex){
+        if (1 != SceneManager.GetActiveScene().buildIndex){
+            prevScene1 = 1;
             SceneManager.LoadScene(outScene);
-            SceneManager.UnloadSceneAsync(inScene);
-            SceneManager.UnloadSceneAsync(tavernScene);
-            currentScene = 0;
         }   
     }
 
      public void goIn(){
-        if (1 != SceneManager.GetActiveScene().buildIndex){
+        //prevScene = SceneManager.GetActiveScene().buildIndex;
+        prevScene1 = 1;
+        if (2 != SceneManager.GetActiveScene().buildIndex){
             SceneManager.LoadScene(inScene);
-            //SceneManager.UnloadSceneAsync(outScene);
-            //SceneManager.UnloadSceneAsync(tavernScene);
-            currentScene = 1;
         }   
     }
 
      public void goTavern(){
-        if (0 != SceneManager.GetActiveScene().buildIndex){
+        prevScene1 = 0;
+        Debug.Log(prevScene1.ToString());
+        if (3 != SceneManager.GetActiveScene().buildIndex){
             SceneManager.LoadScene(tavernScene);
-            //SceneManager.UnloadSceneAsync(inScene);
-            //SceneManager.UnloadSceneAsync(outScene);
-            currentScene = 2;
         }   
+    }
+
+    public int getPrevScene(){
+        return prevScene1;
+    }
+
+    public void setPrev(int i){
+        prevScene1 = i;
+    }
+
+     public void QuitGame(){
+        Application.Quit();
+
+        Debug.Log("quit");
     }
 }

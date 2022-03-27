@@ -21,15 +21,15 @@ AnimationClip:
         time: 0
         value: {x: 0, y: -30, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 5.952053, y: 0, z: 0}
+        outSlope: {x: 1.9920686, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 60.483334
+        time: 180.71666
         value: {x: 360, y: -30, z: 0}
-        inSlope: {x: 5.952053, y: 0, z: 0}
+        inSlope: {x: 1.9920686, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
@@ -63,7 +63,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 60.483334
+    m_StopTime: 180.71666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -86,15 +86,15 @@ AnimationClip:
         time: 0
         value: 0
         inSlope: 0
-        outSlope: 5.952053
+        outSlope: 1.9920686
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 60.483334
+        time: 180.71666
         value: 360
-        inSlope: 5.952053
+        inSlope: 1.9920686
         outSlope: 0
         tangentMode: 69
         weightedMode: 0
@@ -120,7 +120,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 60.483334
+        time: 180.71666
         value: -30
         inSlope: 0
         outSlope: 0
@@ -148,7 +148,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 60.483334
+        time: 180.71666
         value: 0
         inSlope: 0
         outSlope: 0
@@ -197,28 +197,28 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 9.55
+  - time: 25.966667
     functionName: OnDayTimeStart
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 12.1
+  - time: 29.816668
     functionName: OnBellRing
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 25.133333
+  - time: 60.366665
     functionName: OnBellStop
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 32.6
+  - time: 118.86667
     functionName: OnNightTimeStart
     data: 
     objectReferenceParameter: {fileID: 0}
