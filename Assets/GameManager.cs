@@ -2,18 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Assets.SimpleLocalization;
 
 public class GameManager : MonoBehaviour
 {
-    public int outScene, inScene, tavernScene, prevScene1;
     public static GameManager manager;
-    
-
-    public enum Scene {
-        tavern, 
-        village,
-    }
-
+    public static string lang = "English";
 
     void Awake(){
         if (manager == null){
@@ -21,60 +15,58 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(this);
         }else if (manager != this){
             //Destroy(gameObject);
+        } 
+
+        LocalizationManager.Read();
+
+/*
+        switch (Application.systemLanguage)
+        {
+            case SystemLanguage.Greek:
+                LocalizationManager.Language = "Greek";
+                break;
+            default:
+                LocalizationManager.Language = "English";
+                break;
         }
+        */
 
-        
+        LocalizationManager.Language = "English";
     }
 
 
+    public void SetLocalization(string localization)
+		{
+			LocalizationManager.Language = localization;
+            Debug.Log(localization);
+            lang = localization;
+		}
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        outScene = 1;
-        inScene = 2;
-        tavernScene = 3;
-       // prevScene = 1;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    public void goOut(){
-        if (1 != SceneManager.GetActiveScene().buildIndex){
-            prevScene1 = 1;
-            SceneManager.LoadScene(outScene);
-        }   
-    }
 
-     public void goIn(){
-        //prevScene = SceneManager.GetActiveScene().buildIndex;
-        prevScene1 = 1;
+
+    public void start(){
+        //canvas.SetActive(false);
         if (2 != SceneManager.GetActiveScene().buildIndex){
-            SceneManager.LoadScene(inScene);
+            SceneManager.LoadScene(2);
         }   
     }
 
-     public void goTavern(){
-        prevScene1 = 0;
-        Debug.Log(prevScene1.ToString());
+    public void goIn(){
+        if (2 != SceneManager.GetActiveScene().buildIndex){
+            SceneManager.LoadScene(2);
+        }   
+    }
+
+    public void goTavern(){
         if (3 != SceneManager.GetActiveScene().buildIndex){
-            SceneManager.LoadScene(tavernScene);
+            SceneManager.LoadScene(3);
         }   
     }
 
-    public int getPrevScene(){
-        return prevScene1;
-    }
 
-    public void setPrev(int i){
-        prevScene1 = i;
-    }
-
-     public void QuitGame(){
+    public void QuitGame(){
         Application.Quit();
 
         Debug.Log("quit");

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using Assets.SimpleLocalization;
 
 //version 1.0
 public class BarmanNpc : MonoBehaviour, IInteractable
@@ -26,11 +27,14 @@ public class BarmanNpc : MonoBehaviour, IInteractable
         onInteract = false;
         interactor = null;
         dialogueIndex = 0;
+
+        LocalizationManager.Language = GameManager.lang;
     }
 
     public string GetTxt(){
         if(hintText!=null){
-            return hintText;
+            string temp = LocalizationManager.Localize(hintText);
+            return temp;
         }
         return "error";
     }
@@ -69,7 +73,9 @@ public class BarmanNpc : MonoBehaviour, IInteractable
             return;
         }
 
-        interactor.ReceiveInteract(dialogues[dialogueIndex]);
+        string tempDial = LocalizationManager.Localize(dialogues[dialogueIndex]);
+
+        interactor.ReceiveInteract(tempDial);
         dialogueIndex++; //ready for next dialogue
     }
 

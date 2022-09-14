@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using Assets.SimpleLocalization;
 
 //version 1.0
 public class HumanNPC : MonoBehaviour, IInteractable
@@ -29,12 +30,15 @@ public class HumanNPC : MonoBehaviour, IInteractable
         interactor = null;
         dialogueIndex = 0;
         currentAnim = GetComponent<npc_animations>().state;
+
+        LocalizationManager.Language = GameManager.lang;
        
     }
 
-     public string GetTxt(){
+    public string GetTxt(){
         if(hintText!=null){
-            return hintText;
+            string temp = LocalizationManager.Localize(hintText);
+            return temp;
         }
         return "error";
     }
@@ -104,7 +108,9 @@ public class HumanNPC : MonoBehaviour, IInteractable
             return;
         }
 
-        interactor.ReceiveInteract(dialogues[dialogueIndex]);
+        string tempDial = LocalizationManager.Localize(dialogues[dialogueIndex]);
+
+        interactor.ReceiveInteract(tempDial);
         dialogueIndex++; //ready for next dialogue
     }
 

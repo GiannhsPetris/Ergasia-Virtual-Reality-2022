@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Assets.SimpleLocalization;
 
 //Author: apostolos SOVOLOS
 //Version: 1.0
@@ -19,7 +20,8 @@ public class InteractTriggerEvent : MonoBehaviour, IInteractable
 
      public string GetTxt(){
         if(hintText!=null){
-            return hintText;
+            string temp = LocalizationManager.Localize(hintText);
+            return temp;
         }
         return "error";
     }

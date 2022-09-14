@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Assets.SimpleLocalization;
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class NewBehaviourScript : MonoBehaviour
     public UnityEvent onEndAnim;
     public int aleCounter;
     public TextMeshProUGUI aleCounterUI;
+    public GameObject counter;
     public GameObject character;
 
 
@@ -20,6 +22,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         aleCounter = 0;
+        LocalizationManager.Language = GameManager.lang;
     }
 
     // Update is called once per frame
@@ -36,12 +39,13 @@ public class NewBehaviourScript : MonoBehaviour
     }
 
     public void GetUnDrunk(){
+        guiCheck();
         animator.speed = 1;
         postProDrunk.SetActive(false);
         GetComponent<StarterAssets.ThirdPersonController>().MoveSpeed = 2f;
         GetComponent<StarterAssets.ThirdPersonController>().SprintSpeed = 5.335f;
         aleCounter = 0;
-        aleCounterUI.text = "Ales Drunk: " + aleCounter.ToString();
+        aleCounterUI.text = LocalizationManager.Localize("aleSpecial" ,aleCounter.ToString());
     }
 
     public void startEvent(){
@@ -49,10 +53,18 @@ public class NewBehaviourScript : MonoBehaviour
     }
 
     public void aleDrunk(){
+        guiCheck();
         aleCounter+=1;
-        aleCounterUI.text = "Ales Drunk: " + aleCounter.ToString();
+        aleCounterUI.text = LocalizationManager.Localize("aleSpecial" ,aleCounter.ToString());
         if (aleCounter >= 2){
             GetDrunk();
+        }
+    }
+
+    public void guiCheck(){
+        if (!counter.activeSelf) {
+            counter.SetActive(true);
+            Debug.Log("douleyei");
         }
     }
 
