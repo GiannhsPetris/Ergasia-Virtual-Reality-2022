@@ -1,55 +1,0 @@
-Key,English,Spanish
-title,Virtual Reality 2022,Εικονική Πραγματικότητα 2022
-play,Start the Game,Άρχισε το Παιχνίδι
-quit,Quit the Game,Κλείσε τοΠαιχνίδι
-resume,Resume,Συνέχεια
-chest,Open Chest,Άνοιξε το μπαούλο
-key,Pick Key,Πάρε το κλειδί
-Talk,Talk,Μίλα
-talk,Talk,Μίλα
-femSold1,I used to be an adventurer like you,Ήμουν εξερευνητής όπως εσύ
-femSold2,Then I took an arrow in the knee,Μέχρι που έφαγα ένα βέλος στο γόνατο
-hermit1,Toss a coin to your witcher oh valley of plenty,"Πέτα ένα νόμισμα στο γητευτή σου, ω κοιλάδα της αφθονίας"
-hermit2,Ehm excuse me,Εμ με συγχωρείτε
-hermit3,I meant spare a coin weary traveller,Ήθελα να πω μήπως έχεις ένα νόμισμα για τον φτωχό
-hermit4, Thank you,Ευχαριστώ πολύ
-hermit5,I heard you are looking for a key,Άκουσα ότι ψάχνεις για ένα κλειδί
-hermit6,Look behind a house,Κοίτα πίσω από ένα σπίτι
-mer1,Welcome to my shop traveller,"Καλώς ήρθες στο κατάστημά μου, ταξιδιώτη"
-mer2,Take a look at my enormous collection of books,Ρίξτε μια ματιά στην τεράστια συλλογή βιβλίων μου
-soldier,The Mayor is expecting you,Ο Δήμαρχος σας περιμένει
-king1,This can not be happening,Αυτό δεν μπορεί να συμβαίνει
-king2,Not again. Why do I always lose this damned key,Οχι ξανά. Γιατί χάνω πάντα αυτό το καταραμένο κλειδί
-king3,You there traveller can you help me find it?,Εσύ ταξιδιώτη μπορείς να με βοηθήσεις να το βρω;
-king4,Good job Traveller,"Καλή δουλειά Ταξιδιώτη"
-king5,I will unlock the door for you,"Θα σου ξεκλειδώσω την πόρτα"
-king6,There is a chest inside. It is all yours,Υπάρχει ένα μπαούλο μέσα. Είναι όλο δικό σου
-king7,Did you find it?,"Το βρήκες?"
-king8,Ohh no problem,"Ωχ, κανένα πρόβλημα"
-king9,Take your time. I will wait here in the cold,Με την ησυχία σου. Θα περιμένω εδώ στο κρύο
-Examine,Examine,Εξέτασε
-examine,Examine,Εξέτασε
-monk,A monk praying to his God,"Ένας μοναχός που προσεύχεται στον Θεό του"
-mer3,Looking to buy a nice warm rug for the winter?,Ψάχνετε να αγοράσετε ένα ωραίο ζεστό χαλί για το χειμώνα;
-mer4,Take a look at my wares. I have all kinds of usefull trinkets,"Ρίξτε μια ματιά στα προϊόντα μου. Έχω κάθε είδους χρήσιμα μπιχλιμπίδια"
-mer5,Would you like a pretty ring for your lady at home,"Θα θέλατε ένα όμορφο δαχτυλίδι για την κυρία σας στο σπίτι"
-house1,The house of the jeweller,"Το σπίτι του κοσμηματοπώλη"
-house2,The villages church,Η εκκλησία του χωριού
-house3,A commoners House,"Το σπίτι ενός κοινού"
-gotavern,Go to the Tavern,"Πηγαίνετε στην Ταβέρνα"
-open,Open,Άνοιξε
-lockedDoor,The door is locked. Find the key,Η πόρτα είναι κλειδωμένη. Βρες το κλειδι
-65,english,greek
-aleSimple,Ales Drunk: 0,Ποτά: 0
-drunkHermit,Someone drunk too much,Μάλλον κάποιος ήπιε πολυ
-tav1,It seems you have drank one too many ales,Φαίνεται ότι έχεις πιει πάρα πολλές μπίρες
-tav2,Eat some food to feel better,Φάε λίγο φαγητό για να νιώσετε καλύτερα
-bar1,Good evening Traveller,Καλησπέρα Ταξιδιώτη
-bar2,Would you like some ale?,Θα ήθελες λίγη μπύρα;
-bar3,Here you go,Ορίστε
-food,Eat some food,Φάε λίγο φαγητό
-drink,Drink Ale,Πιές μπύρα
-drinkD,You Drink the Ale,Πίνεις τη Μπύρα
-aleSpecial,Ales Drunk: {0},Ποτά: {0}
-gotown,Go to Town,Πήγαινε στην Πόλη
-buy,Buy Ale,Αγόρασε Μπύρα

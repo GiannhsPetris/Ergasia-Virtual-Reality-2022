@@ -6,10 +6,12 @@ using UnityEngine.Events;
 
 public class drunkAi : MonoBehaviour
 { 
-    private NavMeshAgent navMeshAgent;
     Animator animator;
+    private NavMeshAgent navMeshAgent;
     public UnityEvent trip;
     [SerializeField] private Transform movePoint;
+
+
     private void Start(){
        navMeshAgent = GetComponent<NavMeshAgent>();
        animator = GetComponent<Animator>();
@@ -19,10 +21,8 @@ public class drunkAi : MonoBehaviour
 
 
 
-    // Update is called once per frame
     void Update()
     {
-        //navMeshAgent.pathStatus == NavMeshPathStatus.PathComplete 
         if (navMeshAgent.enabled == true){
             if (navMeshAgent.remainingDistance <= 0.5f){
                 animator.SetBool("trip", true);

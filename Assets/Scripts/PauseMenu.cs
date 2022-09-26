@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     public static bool isPaused = false;
     public static PauseMenu menu;
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject descMenu;
     public string lang2;
 
     // Update is called once per frame
@@ -16,7 +17,7 @@ public class PauseMenu : MonoBehaviour
     {
         lang2 = GameManager.lang;
         LocalizationManager.Language = GameManager.lang;
-        if (Input.GetKeyDown(KeyCode.B)){
+        if (Input.GetKeyDown(KeyCode.P)){
             if (isPaused){
                 ResumeGame();
                  //Debug.Log("resume");
@@ -53,6 +54,15 @@ public class PauseMenu : MonoBehaviour
         isPaused = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void ShowInfo(){
+        descMenu.SetActive(true);
+    }
+
+    public void HideInfo()
+    {
+        descMenu.SetActive(false);
     }
 
     public void QuitGame(){

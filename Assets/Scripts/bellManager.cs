@@ -17,11 +17,6 @@ public class bellManager : MonoBehaviour
         DayNightCircleManager.Instance.onBellStop += OnStop;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void OnRing(){
         animator.Play("bell");

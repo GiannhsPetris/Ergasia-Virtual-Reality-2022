@@ -7,14 +7,16 @@ using Assets.SimpleLocalization;
 
 public class BeerInteract : MonoBehaviour, IInteractable
 {
-    //------Setup in Inspector---------------------
+    [Header("Inspector Set up")]
     public Animator animator;
     [TextArea(3,10)]
     public string[] dialogues; //array of string of NPC dialogues
     public UnityEvent onEndDialogue; //unity event can be really useful on Inspector
     public UnityEvent onStart;
     public GameObject cam, character;
-    //----------------------------------------------
+
+
+    [Header("Interaction related")]
     Interactor interactor; //saved interactor, assign on interact
     int dialogueIndex; //index of string we are currently on dialogues
     bool onInteract; //flag when we are on interact
@@ -66,10 +68,8 @@ public class BeerInteract : MonoBehaviour, IInteractable
         //if dialogue index have reaches max dialogues
         //index + 1 (for next dialogue) greater than the amount of dialogue strings
         if (dialogueIndex+1 > dialogues.Length){
-            //character.GetComponent<CharacterController>().enabled = false;
-            //character.GetComponent<StarterAssets.ThirdPersonController>().enabled = false;
+            
             character.GetComponent<PlayerInput>().enabled = false;
-            //character.GetComponent<StarterAssets.StarterAssetsInputs>().enabled = false;
             cam.SetActive(true);
             animator.Play("drinking");
             return;

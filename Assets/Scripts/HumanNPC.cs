@@ -8,7 +8,7 @@ using Assets.SimpleLocalization;
 //version 1.0
 public class HumanNPC : MonoBehaviour, IInteractable
 {
-    //------Setup in Inspector---------------------
+    [Header("Inspector Set up")]
     public Animator animator;
     public AudioSource waveAudio, interactAudio; //basic Audios
     [TextArea(3,10)]
@@ -16,10 +16,13 @@ public class HumanNPC : MonoBehaviour, IInteractable
     public UnityEvent onEndDialogue, key, quest; //unity event can be really useful on Inspector
     string currentAnim;
     public string hintText;
-    //----------------------------------------------
+
+    [Header("Interaction related")]
     Interactor interactor; //saved interactor, assign on interact
     int dialogueIndex; //index of string we are currently on dialogues
     bool onInteract; //flag when we are on interact
+
+    [Header("Quest checks")]
     public bool beggarHint = false;
     public bool foundKey = false;
     public bool questGiven = false;
@@ -54,8 +57,6 @@ public class HumanNPC : MonoBehaviour, IInteractable
 
     //called from HumanNPCSight when player enters an area near NPC
     public void SawPlayer(){
-        //animator.Play("Wave");
-        //set animator parameter and audio (not necessary)
         if(currentAnim == "sad"){
             animator.Play("wave");
         }else{
@@ -92,9 +93,8 @@ public class HumanNPC : MonoBehaviour, IInteractable
            // dialogues = new string[]{"Good job Traveller", "I will unlock the door for you", "There is a chest inside. It is all yours"};
         }
         
-       if (interactAudio!=null) interactAudio.Play(); //play audio if exists
-      // animator.SetTrigger("Interacting"); //set animator parameter
-
+       if (interactAudio!=null) interactAudio.Play(); 
+      
         GiveNextDialogue(); //give next dialogue, basically first dialogue
     }
 
